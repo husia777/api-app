@@ -16,7 +16,8 @@ services:
     ports:
       - "5433:5432"
   app:
-    
+    container_name: app
+    hostname: app
     build:
       context: ./backend
       dockerfile: Dockerfile
