@@ -33,8 +33,7 @@ services:
     image: nginx:latest
     hostname: api-nginx
     container_name: api-nginx
-    ports:
-      - 80:80
+    
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
     depends_on:
