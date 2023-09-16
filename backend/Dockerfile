@@ -18,3 +18,9 @@ RUN pwd
 COPY . .
 
 
+FROM nginx:1.21-alpine
+EXPOSE 8000
+
+COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
+
+
