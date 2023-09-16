@@ -17,7 +17,7 @@ services:
       - "5433:5432"
   api:
     hostname: api
-    container_name: "api"
+    container_name: "api-nginx"
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -31,7 +31,7 @@ services:
       - ./backend:/app
   nginx:
     hostname: nginx
-    container_name: nginx
+    container_name: api-nginx
     build:
       context: ./nginx
       dockerfile: Dockerfile
