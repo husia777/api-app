@@ -29,14 +29,14 @@ services:
       - 8000:8000
     volumes:
       - ./backend:/app
-  nginx:
-    hostname: nginx
-    container_name: nginx-front
-    build:
-      context: ./nginx
-      dockerfile: Dockerfile
-    ports:
-      - 80:80
+  # nginx:
+  #   hostname: nginx
+  #   container_name: nginx
+  #   build:
+  #     context: ./nginx
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - 80:80
 
 volumes:
   postgres_data:
