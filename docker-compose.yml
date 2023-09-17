@@ -30,15 +30,13 @@ services:
     volumes:
       - ./backend:/app
   nginx:
-    image: nginx:latest
-    hostname: api-nginx
-    container_name: api-nginx
+    hostname: nginx
+    container_name: nginx
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
     ports:
       - 80:80
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
-    depends_on:
-      - app
 
 volumes:
   postgres_data:

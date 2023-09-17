@@ -10,12 +10,11 @@ WORKDIR /api-app
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-# install dependencies
 COPY requirements.txt .
 RUN pip install -r requirements.txt
-RUN pwd
-# copy project
 COPY . .
-# COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
+
+RUN apt-get update && apt-get install -y nginx
 
 
+COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
