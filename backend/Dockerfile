@@ -16,6 +16,6 @@ RUN pip install -r requirements.txt
 RUN pwd
 # copy project
 COPY . .
-COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
+# COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 
 
